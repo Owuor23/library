@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Search</title>
+	<h1>Search our Books Catalog</h1>
+	<ul></ul>
+	<h2>Your may search by title or by author</h2>
+</head>
+<body>
+       
+   <form action="booksearch.php" method="post">
+       <table cellpadding="12" style="background-color:powderblue;">
+           <tbody>
+           <tr>
+               <td>Title:</td>
+               <td><input type="text" name="searchtitle"></td>
+           </tr>
+           <tr>
+               <td>Author:</td>
+               <td><input type="text" name="searchauthor"></td>
+           </tr>
+           <tr>
+               <td>Omit books onloan?</td>
+               <td><INPUT type="checkbox"></td>
+           </tr>
+           <tr>
+               <td></td>
+               <td><input type="submit"name="submit"value="Submit"></td>
+           </tr>
+           </tbody>
+       </table>
+   </form>
+
+</body>
+</html>
