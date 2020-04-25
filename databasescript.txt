@@ -1,0 +1,41 @@
+create table books
+(bookid int not null primary key auto_increment,
+title varchar(100) not null,
+author varchar(100) not null,
+onloan boolean,
+duedate date,
+borrowerid int,
+foreign key (borrowerid) references borrowers(borrowerid))engine =innodb
+
+create table borrowers(
+borroweid int not null primary key aouto_increment,
+name varchar(100)not null,
+addresses varchar(100) not null
+
+)engine=INNODB;
+
+insert into borrowers values
+(100,'Homer Simpson','742 Everfreen Terrace,Springfield'),
+(101,'John Doe','54 High Street,Bagshot'),
+(102,'Jane Smith','5 Church Lane,Hambridge'),
+(103,'Henry Higgins','14 Mayfair');
+
+insert into books values
+(null,'Dodger','Terry Pratchett',false,null,null),
+(null,'Dune','Frank Herbert',false,null,null),
+(null,'The Lost Continent','Bill Bryson',false,null,null),
+(null,'Knots and Crosses','Ian Rankin',false,null,null),
+(null,'The Hanging Garden','Ian Rankin',false,null,null);
+
+mysql>show tables;
+mysql> describe books;
+mysql>select*from borrowers;
+mysql>select title,author from books where author like "%Dickens"; 
+mysql>select title,author from books where title like "`%Security%";
+mysql>select title,author from books where title like "%The lost Continent%";
+mysql>update books set onloan=true,duedate="13-10-26",borrowerid="103"where bookid=6;
+mysql>select books.title,books.duedate,borrowers.name from books,borrowers where books.onloa an
+and books.borrowerid=borrowerid=borrowers.borrowerid;
+mysql>insert into books values(null,"MySQL","Paul DuBois",false,null,null);
+mysql>insert into borrowers values(114,"Sherlock Holmes","221Baker Street,London");
+
